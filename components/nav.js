@@ -6,24 +6,31 @@
             if (this._rendered) return
 
             this.innerHTML = `
-              <header class="site-header">
-                <a id="logo-link" class="logo-container" href="index.html" aria-label="Home">
-                  <img src="images/beacon-logo.svg" alt="Beacon Logo" class="site-logo" />
-                </a>
+              <header class="site-header site-header--stacked">
+                <div class="top-bar">
+                  <div class="top-bar__inner">
+                    <ul class="top-bar__links">
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="#">Foundation</a></li>
+                      <li><a href="#">EN</a></li>
+                    </ul>
+                  </div>
+                </div>
 
-                <nav aria-label="Primary Navigation">
-                  <ul class="site-nav">
-                    <li><a href="about.html">About / Team</a></li>
-                    <li><a href="partners.html">Partners</a></li>
-                    <li><a href="patient-stories.html">Patient Advocacy</a></li>
-                    <li><a href="resources.html">Resources & Research</a></li>
-                    <li><a href="clinical.html">Clinical Library</a></li>
-                    <!-- <li><a href="phase2.html">Phase 2</a></li> -->
-                  </ul>
-                </nav>
+                <div class="brand-row">
+                  <a id="logo-link" class="logo-container logo-container--large" href="index.html" aria-label="Home">
+                    <img src="images/beacon-logo-black.svg" alt="Beacon Logo" class="site-logo site-logo--large" />
+                  </a>
 
-                <div class="site-actions">
-                  <button class="nav-contact" type="button" aria-label="Contact">Contact Us</button>
+                  <nav aria-label="Primary Navigation" class="primary-nav">
+                    <ul class="site-nav">
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="partners.html">Partners</a></li>
+                      <li><a href="patient-stories.html">Patient Advocacy</a></li>
+                      <li><a href="resources.html">Resources</a></li>
+                      <li><a href="clinical.html">Clinical</a></li>
+                    </ul>
+                  </nav>
                 </div>
               </header>
             `
@@ -44,19 +51,7 @@
                 }
             })
 
-            // Contact button behaviour & active state
-            const contactBtn = this.querySelector(".nav-contact")
-            if (contactBtn) {
-                contactBtn.addEventListener("click", () => {
-                    location.href = "contact.html"
-                })
-                const current =
-                    location.pathname.split("/").pop() || "index.html"
-                if (current === "contact.html") {
-                    contactBtn.classList.add("active")
-                    contactBtn.setAttribute("aria-current", "page")
-                }
-            }
+            // No dedicated contact button in stacked layout; top-bar links above
 
             this._rendered = true
         }
@@ -73,39 +68,42 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll("nav-bar").forEach((el) => {
                 el.innerHTML = `
-              <header class="site-header">
-                <a id="logo-link" class="logo-container" href="index.html" aria-label="Home">
-                  <img src="images/beacon-logo.svg" alt="Beacon Logo" class="site-logo" />
-                </a>
-                <nav aria-label="Primary Navigation">
-                  <ul class="site-nav">
-                    <li><a href="about.html">About / Team</a></li>
-                    <li><a href="partners.html">Partners</a></li>
-                    <li><a href="patient-stories.html">Patient Advocacy</a></li>
-                    <li><a href="resources.html">Resources & Research</a></li>
-                    <li><a href="clinical.html">Clinical Library</a></li>
-                    <li><a href="phase2.html">Phase 2</a></li>
-                  </ul>
-                </nav>
-                <div class="site-actions">
-                  <button class="nav-contact" type="button" aria-label="Contact">Contact</button>
+              <header class="site-header site-header--stacked">
+                <div class="top-bar">
+                  <div class="top-bar__inner">
+                    <ul class="top-bar__links">
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="#">Foundation</a></li>
+                      <li><a href="#">EN</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="brand-row">
+                  <a id="logo-link" class="logo-container logo-container--large" href="index.html" aria-label="Home">
+                    <img src="images/beacon-logo-black.svg" alt="Beacon Logo" class="site-logo site-logo--large" />
+                  </a>
+
+                  <nav aria-label="Primary Navigation" class="primary-nav">
+                    <ul class="site-nav">
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="partners.html">Partners</a></li>
+                      <li><a href="patient-stories.html">Patient Advocacy</a></li>
+                      <li><a href="resources.html">Resources</a></li>
+                      <li><a href="clinical.html">Clinical</a></li>
+                    </ul>
+                  </nav>
                 </div>
               </header>
             `
 
-                const btn = el.querySelector(".nav-contact")
-                if (btn) {
-                    btn.addEventListener(
-                        "click",
-                        () => (location.href = "contact.html")
-                    )
-                    const current =
-                        location.pathname.split("/").pop() || "index.html"
-                    if (current === "contact.html") {
-                        btn.classList.add("active")
-                        btn.setAttribute("aria-current", "page")
-                    }
-                }
+                // highlight active anchors in fallback copy
+                const anchors = el.querySelectorAll("a")
+                anchors.forEach((a) => {
+                    const href = a.getAttribute("href")
+                    if (href && location.href.endsWith(href))
+                        a.classList.add("active")
+                })
             })
         })
     }

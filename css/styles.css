@@ -7,6 +7,8 @@
     --accent-gray: #f2f2f2;
     --text-color: var(--color-black);
     --placeholder-color: #cccccc;
+    --page-gutter: 180px; /* site side padding (reduced per request) */
+    --container-max-width: 1100px; /* central content container width */
 }
 
 /* Design tokens: keep look minimal and consistent (black & white) */
@@ -38,6 +40,19 @@ header {
     /* background: var(--accent-gray); */
 }
 
+/* Global page gutters: large outer margins on wide screens */
+body {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+}
+
+@media (max-width: 1200px) {
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 h3 {
     font-size: 3.25rem;
     font-weight: 500;
@@ -46,7 +61,6 @@ h3 {
 /* Note: the #content-frame styles are defined separately where used; avoid nesting selectors inside header */
 
 .logo-container {
-    padding: 10px 20px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -56,6 +70,7 @@ h3 {
     height: 54px;
     width: auto;
     display: block;
+    margin-bottom: 24px;
 }
 
 /* Ensure focused logo shows visible outline for keyboard users */
@@ -73,11 +88,123 @@ h3 {
     /* background: var(--accent-gray); */
 }
 
+.site-header--stacked {
+    display: block;
+    padding: 0;
+}
+
+.top-bar {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    padding: 12px 0 22px; /* added more space below the top bar */
+}
+/* .top-bar__inner: divider and spacing are defined in the main block below */
+.top-bar__links a {
+    color: var(--color-black);
+    text-decoration: none;
+}
+.top-bar__links a:hover,
+.top-bar__links a:focus,
+.top-bar__links a:active {
+    color: var(--color-black);
+    text-decoration: none;
+}
+.top-bar__links a:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.12);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+.top-bar__inner {
+    /* max-width: var(--container-max-width); */
+    margin: 0 auto;
+    padding: 0 1rem 12px;
+    display: flex;
+    justify-content: flex-end; /* keep utility links right-aligned */
+    border-bottom: 1px solid var(--border-color); /* divider constrained to container */
+}
+.top-bar__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 18px;
+}
+
+.brand-row {
+    display: flex;
+    flex-direction: column; /* stack logo above nav */
+    align-items: stretch; /* allow logo to align left, nav to span full width */
+    justify-content: center;
+    gap: 12px; /* reduced gap for a tighter, modern look */
+    padding: 24px 0 30px;
+}
+.site-container,
+.hero-inner,
+.intro-proton__inner,
+.banner-gap__inner,
+.vision__inner,
+.partners__inner,
+.proton__inner,
+.clinical__inner,
+.research__inner,
+.final-cta__inner,
+.site-footer-grid {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+.logo-container--large {
+    align-self: flex-start; /* left-align the large logo */
+}
+.logo-container--large .site-logo--large {
+    height: 48px;
+    width: auto;
+}
+.primary-nav {
+    width: 100%;
+}
+.primary-nav .site-nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start; /* left-align the nav items */
+    gap: 54px; /* generous spacing between items */
+    align-items: center;
+    margin: 0; /* ensure it doesn't auto-center from global .site-nav */
+}
+.primary-nav .site-nav a {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-black);
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 150ms ease, transform 120ms ease;
+}
+
+/* Full-width divider removed; the divider is now inside .top-bar__inner */
+
+/* Header inner elements use the shared container constraints defined by
+   the centralized container rule near the top of this file. */
+
+/* Make the primary nav sit flush and visually innovative on wide viewports */
+.site-header--stacked .primary-nav {
+    width: 100%;
+}
+
+/* Small-screen tweak: stack and center nav items */
+@media (max-width: 800px) {
+    .primary-nav .site-nav {
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+}
+
 .site-nav {
     list-style: none;
     display: flex;
     padding: 0;
-    margin: 0 auto; /* center the nav between logo and actions */
+    margin: 0; /* no auto-centering; alignment controlled by parent */
     align-items: center;
 }
 .site-nav a {
@@ -130,7 +257,7 @@ h3 {
 }
 
 .site-nav {
-    margin: 10px auto; /* center between logo and actions; allow some vertical breathing */
+    margin: 10px 0; /* vertical breathing only */
     flex-wrap: wrap;
     gap: 32px;
 }
@@ -140,7 +267,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto 1rem auto;
     text-align: left;
 }
@@ -319,12 +446,12 @@ h2 {
 /* Hero / Homepage top section */
 .hero {
     text-align: center;
-    padding: clamp(3rem, 10vw, 7rem) 2rem 2rem;
+    padding: clamp(3rem, 5vw, 7rem) 2rem 2rem;
     background: linear-gradient(180deg, #fff 0%, #fff 60%);
     box-sizing: border-box;
 }
 .hero-inner {
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 .hero h1,
@@ -557,7 +684,7 @@ h2 {
     background: #fafafa;
 }
 .partners__inner {
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     text-align: center;
 }
@@ -592,7 +719,7 @@ h2 {
     padding: 3rem 1rem;
 }
 .proton__inner {
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -640,7 +767,7 @@ h2 {
     background: #fff;
 }
 .clinical__inner {
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 1rem; /* align with other sections */
     box-sizing: border-box;
@@ -811,7 +938,7 @@ h2 {
     background: #fafafa;
 }
 .research__inner {
-    max-width: 1100px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 .research__grid {
