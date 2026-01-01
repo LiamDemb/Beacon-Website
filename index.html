@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Proton Radiation Centre - Wireframe Prototype</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <nav-bar></nav-bar>
+        <script src="components/nav.js" defer></script>
+        <script src="components/footer.js" defer></script>
+        <script src="components/clinical.js" defer></script>
+
+        <main>
+            <section id="home" class="hero">
+                <div class="hero-inner">
+                    <h1 class="hero__title">
+                        A New Era of Cancer Care Begins in Perth
+                    </h1>
+                    <p class="hero__subtitle">
+                        Precision proton therapy is arriving in Western
+                        Australia — delivering world-leading treatment with
+                        fewer side effects and greater hope.
+                    </p>
+                    <a class="hero__cta" href="contact.html"
+                        >Start your journey now →</a
+                    >
+                </div>
+
+                <div class="hero__image">
+                    <img
+                        src="https://www.protonintlondon.com/wp-content/uploads/2023/04/guide-to-proton-beam-therapy.jpg"
+                        alt="Healthcare team and patient"
+                    />
+                </div>
+            </section>
+            <!-- 1. Proton introduction (new first section) -->
+            <section
+                class="intro-proton"
+                id="proton-intro"
+                aria-labelledby="proton-intro"
+            >
+                <div class="intro-proton__inner">
+                    <div class="intro-proton__content">
+                        <h2 id="proton-intro" class="intro-proton__title">
+                            Where precision meets possibility
+                        </h2>
+                        <p class="intro-proton__lead">
+                            Proton therapy focuses radiation exactly where it’s
+                            needed — and spares what isn’t. It’s a smarter,
+                            gentler approach to cancer treatment, designed to
+                            improve outcomes and protect quality of life.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Emotional Hook (boxed testimony) -->
+            <section class="banner-gap boxed" aria-labelledby="gap-quote">
+                <div class="banner-gap__inner">
+                    <h3>A first for Perth, a first for Australia</h3>
+                    <blockquote id="gap-quote" class="banner-gap__quote">
+                        “We had to travel all the way to America for this
+                        treatment; the distance, expense and time away from
+                        family made it really hard. If we had this care in
+                        Perth, it would change everything for families like
+                        ours.”
+                        <cite class="banner-gap__cite"
+                            >— Patient from regional WA</cite
+                        >
+                    </blockquote>
+                    <div class="banner-gap__bg" aria-hidden="true">
+                        <img src="images/perth-map.svg" alt="" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Introducing Beacon (Vision & Mission) -->
+            <section class="vision" id="vision">
+                <div class="vision__inner">
+                    <h2 class="vision__title">Our North Star</h2>
+                    <p class="vision__lead">
+                        To ensure
+                        <span class="accent"
+                            >no Western Australian is forced to leave home</span
+                        >
+                        for world-leading cancer care.
+                    </p>
+
+                    <div class="vision__mission">
+                        <h3>Mission</h3>
+                        <p>
+                            Beacon will achieve this through three pillars:
+                            <strong> Advanced Technology</strong>,
+                            <strong> Clinical Excellence</strong> and
+                            <strong> Research Leadership</strong>. By combining
+                            world-class equipment with local expertise and
+                            active research programs, Beacon will deliver care
+                            that keeps patients home.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The Beacon Partnership (Credibility Bar) -->
+            <section class="partners" aria-label="Partners and supporters">
+                <div class="partners__inner">
+                    <h3 class="partners__title">Supported by</h3>
+                    <div class="partners__logos">
+                        <div class="partner-logo">Peron</div>
+                        <div class="partner-logo">Telethon</div>
+                        <div class="partner-logo">State Government</div>
+                        <div class="partner-logo">University Partner</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Why Proton Therapy? (The Tool) -->
+            <section class="proton" id="proton">
+                <div class="proton__inner">
+                    <div class="proton__copy">
+                        <h3>Why Proton Therapy?</h3>
+                        <p class="proton__lead">
+                            Proton therapy offers precise tumour targeting to
+                            reduce dose to surrounding healthy tissue —
+                            especially valuable in paediatrics and complex
+                            anatomical sites.
+                        </p>
+                        <a class="btn-secondary" href="resources.html"
+                            >Full Educational Archive →</a
+                        >
+                    </div>
+
+                    <div class="proton__visual">
+                        <div class="proton-visual__item">
+                            <strong>Precision</strong>
+                            <p>Targets tumours while sparing healthy tissue</p>
+                        </div>
+                        <div class="proton-visual__item">
+                            <strong>Less toxicity</strong>
+                            <p>Lower long-term side effects for survivors</p>
+                        </div>
+                        <div class="proton-visual__item">
+                            <strong>Research-ready</strong>
+                            <p>Ideal platform for translational studies</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Clinical Focus (Where Beacon Works) -->
+            <section class="clinical" id="clinical-focus">
+                <div class="clinical__inner">
+                    <h3 class="clinical__title">Clinical Focus</h3>
+                    <p class="clinical__lead">
+                        Primary areas where proton therapy can make the biggest
+                        difference.
+                    </p>
+
+                    <div
+                        class="clinical-accordion"
+                        role="region"
+                        aria-label="Clinical focus"
+                    >
+                        <div class="clinical-track">
+                            <!-- Item 1 -->
+                            <div class="clinical-item" data-key="pediatrics">
+                                <button
+                                    class="clinical-item__summary"
+                                    aria-expanded="false"
+                                    aria-controls="panel-pediatrics"
+                                >
+                                    <span
+                                        class="clinical-item__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                        >
+                                            <circle
+                                                cx="8"
+                                                cy="8"
+                                                r="3"
+                                                stroke="currentColor"
+                                                stroke-width="1.25"
+                                            />
+                                            <path
+                                                d="M3 20c2-3 6-4.5 9-4.5s7 1 9 4.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.25"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <span class="clinical-item__title"
+                                        >Lymphoma</span
+                                    >
+                                </button>
+                                <div
+                                    id="panel-pediatrics"
+                                    class="clinical-item__panel"
+                                    role="region"
+                                    aria-hidden="true"
+                                >
+                                    <div class="clinical-item__body">
+                                        <p>
+                                            Reducing radiation exposure to vital
+                                            organs while effectively treating
+                                            lymphatic cancers, helping protect
+                                            long-term health and recovery.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="clinical-item__media"
+                                        aria-hidden="true"
+                                    >
+                                        <img
+                                            src="images/clinical-1.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="clinical-item" data-key="brain">
+                                <button
+                                    class="clinical-item__summary"
+                                    aria-expanded="false"
+                                    aria-controls="panel-brain"
+                                >
+                                    <span
+                                        class="clinical-item__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M12 3c2 0 4 1 5 3 1 2 1 4 0 6s-1 2-1 4c0 2-2 4-4 4s-4-2-4-4c0-2 0-2-1-4s-1-4 0-6c1-2 3-3 5-3z"
+                                                stroke="currentColor"
+                                                stroke-width="1.2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <span class="clinical-item__title"
+                                        >Brain & Skull Base</span
+                                    >
+                                </button>
+                                <div
+                                    id="panel-brain"
+                                    class="clinical-item__panel"
+                                    role="region"
+                                    aria-hidden="true"
+                                >
+                                    <div class="clinical-item__body">
+                                        <p>
+                                            High precision for complex
+                                            anatomical sites that demand careful
+                                            sparing of nearby structures.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="clinical-item__media"
+                                        aria-hidden="true"
+                                    >
+                                        <img
+                                            src="images/clinical-2.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="clinical-item" data-key="headneck">
+                                <button
+                                    class="clinical-item__summary"
+                                    aria-expanded="false"
+                                    aria-controls="panel-headneck"
+                                >
+                                    <span
+                                        class="clinical-item__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M7 14c1.5 2 4 3 7 3s5.5-1 7-3"
+                                                stroke="currentColor"
+                                                stroke-width="1.2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M12 3v5"
+                                                stroke="currentColor"
+                                                stroke-width="1.2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <span class="clinical-item__title"
+                                        >Head & Neck</span
+                                    >
+                                </button>
+                                <div
+                                    id="panel-headneck"
+                                    class="clinical-item__panel"
+                                    role="region"
+                                    aria-hidden="true"
+                                >
+                                    <div class="clinical-item__body">
+                                        <p>
+                                            Protects nearby organs and functions
+                                            while delivering effective treatment
+                                            to tumours.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="clinical-item__media"
+                                        aria-hidden="true"
+                                    >
+                                        <img
+                                            src="images/clinical-3.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="clinical-item" data-key="other">
+                                <button
+                                    class="clinical-item__summary"
+                                    aria-expanded="false"
+                                    aria-controls="panel-other"
+                                >
+                                    <span
+                                        class="clinical-item__icon"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M12 2l1.8 3.6L18 7l-4 2.4L12 14l-2-4.6L6 7l4.2-1.4L12 2z"
+                                                stroke="currentColor"
+                                                stroke-width="1"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <span class="clinical-item__title"
+                                        >Other Indications</span
+                                    >
+                                </button>
+                                <div
+                                    id="panel-other"
+                                    class="clinical-item__panel"
+                                    role="region"
+                                    aria-hidden="true"
+                                >
+                                    <div class="clinical-item__body">
+                                        <p>
+                                            Selected soft-tissue and
+                                            re-irradiation cases where proton
+                                            therapy can offer distinct
+                                            advantages.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="clinical-item__media"
+                                        aria-hidden="true"
+                                    >
+                                        <img
+                                            src="images/clinical-1.svg"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Research & Momentum (News + Repository) -->
+            <section class="research" id="research">
+                <div class="research__inner">
+                    <h3>Research & Momentum</h3>
+                    <div class="research__grid">
+                        <div class="research__news">
+                            <article class="news-item">
+                                <h4>Project Das Reaches Milestone</h4>
+                                <p class="muted">
+                                    Jan 2026 — Implementation phase approved
+                                </p>
+                            </article>
+                            <article class="news-item">
+                                <h4>
+                                    New collaborative study on paediatric
+                                    outcomes
+                                </h4>
+                                <p class="muted">
+                                    Nov 2025 — Early results promising
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="research__repo">
+                            <h4>Research Repository</h4>
+                            <p class="muted">
+                                Recent publications & technical briefs
+                            </p>
+                            <ul>
+                                <li>
+                                    <a href="resources.html"
+                                        >Proton therapy comparative review</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="resources.html"
+                                        >Dosimetry and technical brief</a
+                                    >
+                                </li>
+                            </ul>
+                            <a class="btn-secondary" href="resources.html"
+                                >Explore Research →</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Join the Beacon Mission (Final CTA) -->
+            <section class="final-cta" id="join">
+                <div class="final-cta__inner">
+                    <h2>Join the Beacon Mission</h2>
+                    <p class="final-cta__lead">
+                        Whether you're an investor, partner or advocate — your
+                        involvement will accelerate access to proton therapy in
+                        WA.
+                    </p>
+
+                    <div class="final-cta__actions">
+                        <a class="btn-primary" href="contact.html?type=investor"
+                            >Investor Portal</a
+                        >
+                        <a class="btn-primary" href="contact.html?type=partner"
+                            >Partnership Inquiries</a
+                        >
+                        <a class="btn-primary" href="contact.html?type=advocacy"
+                            >Patient Advocacy</a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <site-footer></site-footer>
+
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
