@@ -19,7 +19,7 @@
 
                 <div class="brand-row">
                   <a id="logo-link" class="logo-container logo-container--large" href="index.html" aria-label="Home">
-                    <img src="images/beacon-logo-new .svg" alt="Beacon Logo" class="site-logo site-logo--large" />
+                    <img src="images/beacon-logo-new.svg" alt="Beacon Logo" class="site-logo site-logo--large" />
                   </a>
 
                   <nav aria-label="Primary Navigation" class="primary-nav">
