@@ -174,7 +174,7 @@ h3 {
 }
 .primary-nav .site-nav a {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--color-black);
     text-decoration: none;
     padding: 6px 0;
@@ -210,11 +210,11 @@ h3 {
 .site-nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 400;
 }
 .site-nav a.active {
     text-decoration: underline;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* Contact button in the main navigation (styled like a CTA) */
