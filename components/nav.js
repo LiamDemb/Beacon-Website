@@ -27,8 +27,8 @@
                       <li><a href="about.html">About</a></li>
                       <li><a href="partners.html">Partners</a></li>
                       <li><a href="patient-stories.html">Patient Advocacy</a></li>
-                      <li><a href="resources.html">Resources</a></li>
-                      <li><a href="clinical.html">Clinical</a></li>
+                      <li><a href="resources.html">About Proton Radiation</a></li>
+                      <li><a href="clinical.html">Research Library</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -89,8 +89,8 @@
                       <li><a href="about.html">About</a></li>
                       <li><a href="partners.html">Partners</a></li>
                       <li><a href="patient-stories.html">Patient Advocacy</a></li>
-                      <li><a href="resources.html">Resources</a></li>
-                      <li><a href="clinical.html">Clinical</a></li>
+                      <li><a href="resources.html">About Proton Radiation</a></li>
+                      <li><a href="clinical.html">Research Library</a></li>
                     </ul>
                   </nav>
                 </div>

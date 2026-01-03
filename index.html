@@ -11,6 +11,7 @@
         <script src="components/nav.js" defer></script>
         <script src="components/footer.js" defer></script>
         <script src="components/clinical.js" defer></script>
+        <script src="components/intro-proton-visual.js" defer></script>
 
         <main>
             <section id="home" class="hero">
@@ -43,6 +44,10 @@
             >
                 <div class="intro-proton__inner">
                     <div class="intro-proton__content">
+                        <p class="intro-proton__pre">
+                            Proton Radiation Treatment
+                        </p>
+
                         <h2 id="proton-intro" class="intro-proton__title">
                             Where precision meets possibility
                         </h2>
@@ -52,6 +57,21 @@
                             gentler approach to cancer treatment, designed to
                             improve outcomes and protect quality of life.
                         </p>
+                        <div class="intro-proton__actions">
+                            <a class="btn-primary" href="resources.html">
+                                Learn more about proton radiation →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right-hand visual: lazy-loaded component that injects
+                         the (potentially large) animation SVG only when visible -->
+                    <div class="intro-proton__visual" aria-hidden="true">
+                        <iframe
+                            class="intro-proton__iframe"
+                            src="images/intro-proton-animation.html"
+                            loading="lazy"
+                        ></iframe>
                     </div>
                 </div>
             </section>
